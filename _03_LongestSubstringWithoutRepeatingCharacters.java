@@ -23,6 +23,23 @@ public class _03_LongestSubstringWithoutRepeatingCharacters {
         return max;
     }
 
+    public int lengthOfLongestSubstring_2(String s) {
+        int n = s.length();
+        Set<Character> set = new HashSet<>();
+        int ans = 0, i = 0, j = 0;
+        while (i < n && j < n) {
+            // try to extend the range [i, j]
+            if (!set.contains(s.charAt(j))){
+                set.add(s.charAt(j++));
+                ans = Math.max(ans, j - i);
+            }
+            else {
+                set.remove(s.charAt(i++));
+            }
+        }
+        return ans;
+    }
+
     public int lengthOfLongestSubstringDp(String s) {
         int max = 0;
         int[] dp = new int[s.length() + 1];
@@ -44,5 +61,19 @@ public class _03_LongestSubstringWithoutRepeatingCharacters {
             max = Math.max(dp[i], max);
         }
         return max;
+    }
+
+    public int lengthOfLongestSubstring_3(String s) {
+        int n = s.length(), ans = 0;
+        Map<Character, Integer> map = new HashMap<>();
+        for (int end = 0, start = 0; end < n; end++) {
+            char alpha = s.charAt(end);
+            if (map.containsKey(alpha)) {
+                start = Math.max(map.get(alpha), start);
+            }
+            ans = Math.max(ans, end - start + 1);
+            map.put(s.charAt(end), end + 1);
+        }
+        return ans;
     }
 }
