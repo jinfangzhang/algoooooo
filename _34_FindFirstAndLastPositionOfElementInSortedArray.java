@@ -44,3 +44,6 @@ public class _34_FindFirstAndLastPositionOfElementInSortedArray {
         return -1;
     }
 }
+在这里，base64编码的设置是一个帧有效载荷，
+它已经被base64url编码，所有尾随的等于字符都被删除，
+以便安全地将它包含在这个文本头格式中
