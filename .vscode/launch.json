@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - OddEvenLinkedList",
+            "request": "launch",
+            "mainClass": "Category.LinkedList.OddEvenLinkedList",
+            "projectName": "algoooooo_5eae7f2a"
+        }
+    ]
+}
