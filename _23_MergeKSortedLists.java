@@ -25,7 +25,7 @@ public class _23_MergeKSortedLists {
         ArrayList<ListNode> listNodeList = new ArrayList<>();
         if (lists == null || lists.length == 0)
             return null;
-
+        
         Collections.addAll(listNodeList, lists);
 
         while (listNodeList.size() != 1) {
